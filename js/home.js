@@ -123,10 +123,12 @@ $(document).ready(function () {
 		var $registerButton = $('#registerButton');
 		$registerButton.button('loading');
 		$.ajax({
+			method: "POST",
 			url: '/user/ajax/register',
 			data: $this.serialize(),
 			success: function(result) {
 				location.reload();
+
 			}
 		});
 	});

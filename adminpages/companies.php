@@ -159,6 +159,8 @@
               <option value="ssc">10th Standard Marks</option>
               <option value="hsc">12th Standard/Diploma Marks</option>
               <option value="cgpa">CGPA</option>
+              <option value="gender">Gender</option>
+              <option value="preflang">Prefered Language</option>
               <option value="address">Address</option>
               <option value="internships">Internships</option>
             </select>

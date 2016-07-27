@@ -1,6 +1,6 @@
 <?php 
-	$deets = array('fname'=>"First Name",'lname'=>"Last Name",'email'=>"Email",'phone'=>"Phone Number",'ssc'=>"10th Standard", 'hsc'=>"12th Standard/ Diploma",'cgpa'=>"CGPA",'address'=>"Address",'internships'=>"Internships");
-	$priority = array('fname'=>0,'lname'=>1,'email'=>2,'phone'=>3,'ssc'=>4, 'hsc'=>5,'cgpa'=>6,'address'=>7,'internships'=>8);
+	$deets = array('fname'=>"First Name",'lname'=>"Last Name",'email'=>"Email",'phone'=>"Phone Number",'ssc'=>"10th Standard", 'hsc'=>"12th Standard/ Diploma",'cgpa'=>"CGPA",'address'=>"Address",'internships'=>"Internships", 'gender'=>"Gender", 'preflang'=>"Preferred Language");
+	$priority = array('fname'=>0,'lname'=>1,'email'=>2,'phone'=>3,'ssc'=>4, 'hsc'=>5,'cgpa'=>6,'gender'=>7, 'preflang'=>8,'address'=>9,'internships'=>10);
 	include 'env.php';
 	include 'db.php';
 	include 'getter.php';

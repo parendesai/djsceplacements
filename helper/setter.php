@@ -81,7 +81,7 @@
 			$qry = "DELETE FROM `companyuser` WHERE `companyid` = '$cid' AND `sapid` = '$sap'";
 		}
 		$q = $cxn->query($qry);
-		return $qry;
+		return $q;
 	}
 
 	function changeAdmin($sap) {

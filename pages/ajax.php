@@ -31,6 +31,6 @@
 	}
 
 	if($isUser && isset($params[2]) && $params[2]=="register") {
-		echo registerUser($_GET['cid'], $_SESSION['sap'], $_GET['status']);
+		echo registerUser($_POST['cid'], $_SESSION['sap'], $_POST['status']);
 	}
 ?>
