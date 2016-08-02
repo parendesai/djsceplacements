@@ -47,4 +47,6 @@
 <?php include 'pages/scripts.php'; ?>
 <script type="text/javascript" src="/js/authentication.js"></script>
 <script type="text/javascript" src="/js/home.js"></script>
+<script type="text/javascript" src="/js/login.js"></script>
+<script type="text/javascript" src="/js/edit.js"></script>
 <?php include 'pages/footer.php'; ?>
