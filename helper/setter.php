@@ -93,4 +93,21 @@
 		return "done";
 	}
 
+	function resetPassword($sap) {
+		global $cxn;
+		$pass = md5($sap);
+		$qry = "UPDATE `users` SET `password` = '$pass' WHERE `sap`='$sap'";
+		// return $qry;
+		$qry = $cxn->query($qry);
+		return "done";
+	}
+
+	function addUser($sap) {
+		global $cxn;
+		$pass = md5($sap);
+		$qry = "INSERT INTO `users` (`id`, `sap`, `password`, `fname`, `lname`, `ssc`, `hsc`, `cgpa`, `address`, `internships`, `email`, `phone`, `updated`, `admin`) VALUES (NULL, '$sap', '$pass', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '0', '0')";
+		$qry = $cxn->query($qry);
+		return "done";
+	}
+
 ?>

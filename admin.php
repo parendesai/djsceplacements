@@ -30,4 +30,5 @@
 <script type="text/javascript" src="/js/admingenerate.js"></script>
 <script type="text/javascript" src="/js/adminmail.js"></script>
 <script type="text/javascript" src="/js/admindelete.js"></script>
+<script type="text/javascript" src="/js/adminuser.js"></script>
 <?php include 'pages/footer.php'; ?>

@@ -8,8 +8,8 @@ if($isAdmin){
 		include 'ajaxmail.php';
 	}
 	
-	if($params[2] == "users" && $params[3]=="makeadmin") {
-		echo changeAdmin($_POST['sap']);
+	if($params[2] == "users") {
+		include 'ajaxuser.php';
 	}
 
 }

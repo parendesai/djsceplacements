@@ -1,19 +1,4 @@
 $(document).ready(function() { 
-	$('.admin').click(function() {
-		$this = $(this);
-		$this.button('loading');
-		$.ajax({
-			method: "POST",
-			url: '/admin/ajax/users/makeadmin',
-			data: {
-				sap: $this.attr('data-sap')
-			},
-			success: function(result) {
-				location.reload();
-			}
-		});
-	});
-
 	$('.email').click(function() {
 		$this = $(this);
 		$this.button('loading');

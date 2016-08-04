@@ -1,4 +1,8 @@
 <?php $comps = getAllCompanies(); ?>
+<div class="row padded">
+  <a class="btn btn-default pull-right" style="margin-bottom: 10px;" href="/admin/company/create/" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+</div>
+<div class="row padded">
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <?php for ($i=0; $i < count($comps); $i++) { 
       $id = $comps[$i]['id'];
@@ -42,6 +46,7 @@
     </div>
   </div>
   <?php } ?>
+</div>
 </div>
 
 
