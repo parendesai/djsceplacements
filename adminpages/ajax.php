@@ -12,5 +12,9 @@ if($isAdmin){
 		include 'ajaxuser.php';
 	}
 
+	if($params[2] == "update") {
+		include 'ajaxupdates.php';
+	}
+
 }
 ?>

@@ -9,7 +9,7 @@
       $count = count(getRegistered($id));
       $userdetails = getRequiredFields($id);
   ?>
-    <div class="panel panel-default">
+  <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="heading<?php echo $i; ?>">
       <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
@@ -30,13 +30,14 @@
           <?php } ?>
         </ul>
         <div class="btn-group" role="group" data-name="<?php echo $comps[$i]['name'];?>" data="<?php echo $comps[$i]['id'];?>" status="<?php echo $comps[$i]['open'];?>" data-slug="<?php echo $comps[$i]['slug'];?>" data-desc='<?php echo html_entity_decode($comps[$i]['descr']);?>' data-det='<?php echo json_encode($a); ?>' data-mincgpa="<?php echo $comps[$i]['mincgpa'];?>" data-minssc="<?php echo $comps[$i]['minssc'];?>" data-minhsc="<?php echo $comps[$i]['minhsc'];?>">
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirm">Delete</button>
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
           <button type="button" class="btn-cl btn btn-<?php if($comps[$i]['open'] == 'open') echo 'warning'; else echo "info" ?>" data-loading-text="Loading..."><?php if($comps[$i]['open'] == 'open') echo 'Close'; else echo "Open" ?></button>
-          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal">Edit</button>
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
           <a href="/admin/view/company/<?php echo $comps[$i]['id']?>" type="button" class="btn btn-default">View Registered</a>
           <button type="button" data-toggle="modal" data-target="#generateModal" class="btn btn-default excel" data-loading-text="Generating...">Generate XLS</button>
           <button type="button" class="btn btn-default email" data-loading-text="Sending...">Send Reminder</button>
           <button type="button" data-toggle="modal" data-target="#mailModal" class="btn btn-default">Send Updates to Registered</button>
+          <button type="button" data-toggle="modal" data-target="#updateModal" class="btn btn-default">Add Updates</button>
         </div>
 
       </div>
@@ -55,3 +56,4 @@
 <?php include 'modals/xlsmodal.php'; ?>
 <?php include 'modals/deletemodal.php'; ?>
 <?php include 'modals/editmodal.php'; ?>
+<?php include 'modals/addupdatemodal.php'; ?>

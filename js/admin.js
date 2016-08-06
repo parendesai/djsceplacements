@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('.email-select').select2();
 
-	$('#descr, #mail-editor').summernote({
+	$('#descr, #mail-editor, .updateEditor').summernote({
 		height:200,
 		toolbar: [
 			['style', ['bold', 'italic', 'underline']],

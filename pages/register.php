@@ -8,49 +8,31 @@
 			$userdetails = getRequiredFields($comp['id']);
 			$user = getUser($sap);
 			$isReg = isRegistered($sap, $comp['id']);
+			$updates = getUpdates($comp['id']);
 		}
 	} else {
 		$notfound = 1;
 	}
 ?>
-<div class="col-md-4 col-md-offset-4">
-	<?php if(isset($notfound)) { ?>
-		<div class='alert alert-dismissible alert-danger' role='alert'>
-			Company Not Found
-		</div>
-	<?php } else { ?>
-			<div class="panel panel-default">
-			  <div class="panel-heading">
-			    <h3 class="panel-title"><?php echo $comp['name'];?></h3>
-			  </div>
-			  <div class="panel-body">
-			    <?php echo html_entity_decode($comp['descr']); ?>
-			  </div>
-			  <div class="panel-footer">Following Details will be submitted to <?php echo $comp['name'];?></div>
-			  <table class="table">
-				  <?php for ($i=0; $i < count($userdetails); $i++) { ?>
-				  	<tr>
-				  		<td><?php echo $deets[$userdetails[$i]['userdetail']];?></td>
-				  		<td><?php echo $user[$userdetails[$i]['userdetail']];?></td>
-				  	</tr>
-				  <?php } ?>
-			  </table>
-			</div>
-			<form id="registerForm">
-				<?php if ($isReg != 0) { ?>
-					<div class='alert alert-dismissible alert-info' role='alert'>
-						You have already registered for <?php echo $comp['name'];?>
-					</div> 
-				<?php }?>
-				<?php if($comp['open']=='open') { ?>
-					<input type="hidden" name="cid" value="<?php echo $comp['id']; ?>">
-					<input type="hidden" name="status" value="<?php if($isReg == 0) echo "insert"; else echo "delete";?>">
-					<button id="register" type="submit" name="register" value="<?php echo $sap;?>" class="btn btn-primary btn-block"><?php if($isReg==0) echo "Register"; else echo "Cancel Registeration";?> for <?php echo $comp['name'];?></button>
-				<?php  } else { ?>
-					<div class='alert alert-dismissible alert-warning' role='alert'>
-						Registeration for <?php echo $comp['name'];?> has closed
-					</div>
-				<?php } ?>
-			</form>
-	<?php } ?>
-</div>
+<?php if(isset($notfound)) { ?>
+	<div class='alert alert-dismissible alert-danger' role='alert'>
+		Company Not Found
+	</div>
+<?php } else { ?>
+  <div class="col-md-4 col-md-offset-4">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><?php echo $comp['name'];?></h3>
+	  </div>
+	  <div class="panel-body">
+	    <?php echo html_entity_decode($comp['descr']); ?>
+	  </div>
+	</div>
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	  <?php if(count($updates)>0) include 'tabs/updatestab.php'; ?>
+	  <?php include 'tabs/registertab.php'; ?>
+	  <?php include 'tabs/queriestab.php'; ?>
+	</div>
+  </div>	  
+<?php } ?>
+

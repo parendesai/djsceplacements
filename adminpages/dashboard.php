@@ -5,6 +5,7 @@
   $stud = isset($params[1]) && isset($params[2]) && $params[1]=="view" && $params[2]=='all';
   $indiv = isset($params[1]) && isset($params[2]) && $params[1]=="view" && $params[2]=='company';
   $email = isset($params[1]) && isset($params[2]) && $params[1]=="send" && $params[2]=='email';
+  $update = isset($params[1]) && isset($params[2]) && $params[1]=="view" && $params[2]=='updates';
 ?>
     <div class="container-fluid">
       <div class="row">
@@ -16,7 +17,7 @@
             
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
+            <li <?php if($update)echo 'class="active"'; ?>><a href="/admin/view/updates">View Updates</a></li>
             <li><a href="">Nav item again</a></li>
             <li><a href="">One more nav</a></li>
             <li><a href="">Another nav item</a></li>
@@ -43,7 +44,9 @@
             include "adminpages/viewregister.php";
           } else if ($email) {
             include "adminpages/sendmail.php";
-          } 
+          } else if ($update) {
+            include "adminpages/updates.php";
+          }
           ?>
         </div>
       </div>

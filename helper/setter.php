@@ -110,4 +110,25 @@
 		return "done";
 	}
 
+	function addUpdate($cid, $descr, $date) {
+		global $cxn;
+		$qry = "INSERT INTO `updates` (`id`, `cid`, `date`, `updts`) VALUES (NULL, '$cid', '$date', '$descr')";
+		$qry = $cxn->query($qry);
+		return $qry;
+	}
+
+	function deleteUpdate($id) {
+		global $cxn;
+		$qry = "DELETE FROM `updates` WHERE `id`='$id'";
+		$qry = $cxn->query($qry);
+		return $qry;
+	}
+
+	function editUpdate($id, $descr) {
+		global $cxn;
+		$qry = "UPDATE `updates` SET `updts`='$descr' WHERE `id`='$id'";
+		$qry = $cxn->query($qry);
+		return $qry;
+	}
+
 ?>

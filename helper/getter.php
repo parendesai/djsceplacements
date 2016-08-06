@@ -62,7 +62,7 @@
 
 	function getRegistered($cid) {
 		global $cxn;
-		$qry = "SELECT * FROM `users` WHERE `sap`=(SELECT `sapid` FROM `companyuser` WHERE `companyid`='$cid')";
+		$qry = "SELECT * FROM `users` WHERE `sap`in (SELECT `sapid` FROM `companyuser` WHERE `companyid`='$cid')";
 		$qry = $cxn->query($qry);
 		$users = array();
 		while($row = $qry->fetch_assoc()) {
@@ -93,6 +93,17 @@
 			$users[] = $row;
 		}
 		return $users;
+	}
+
+	function getUpdates($cid) {
+		global $cxn;
+		$updates = array();
+		$qry = "SELECT * FROM `updates` WHERE `cid`='$cid'";
+		$qry = $cxn->query($qry);
+		while($row = $qry->fetch_assoc()) {
+			$updates[] = $row;
+		}
+		return $updates;
 	}
 
 
