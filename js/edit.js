@@ -61,7 +61,7 @@ $(document).ready(function () {
 				url: '/user/ajax/edit',
 				data: $this.serialize(),
 				success: function(result) {
-					if(result=="reload") {
+					if($.trim(result) =="reload") {
 						location.reload();
 					}
 					$('#alertComplete').removeClass('hidden');

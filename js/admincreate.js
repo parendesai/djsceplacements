@@ -19,7 +19,6 @@ $(document).ready(function() {
 				minhsc: $('#minhscInput').val()
 			},
 			success: function(result) {
-				console.log(result);
 				$this.removeAttr('disabled');
 				$this.text('Create Company');
 				$('#alert').removeClass('hide');

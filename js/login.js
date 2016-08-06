@@ -13,7 +13,7 @@ $(document).ready(function () {
 			data: $this.serialize(),
 			success: function(result) {
 				console.log(result);
-				if(result == "true"){
+				if($.trim(result) == "true"){
 					location.reload();
 				} else {
 					$('#alertInvalid').removeClass("hide");

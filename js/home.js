@@ -9,7 +9,7 @@ $(document).ready(function () {
 			url: '/user/ajax/change',
 			data: $this.serialize(),
 			success: function(result) {
-				if(result == "true"){
+				if($.trim(result) == "true"){
 					$('#updateAlert').removeClass('hidden');
 					$('#errorAlert').addClass('hidden');
 				}

@@ -25,7 +25,6 @@ $(document).ready(function() {
 				status: stat.toLowerCase(),
 			},
 			success: function (result) {
-				console.log(result);
 				if(stat == "open") { 
 					$this.text("Open").addClass('btn-info').removeClass('btn-warning'); 
 					$this.parent().attr('status', 'close');
