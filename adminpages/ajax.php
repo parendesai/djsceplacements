@@ -16,5 +16,9 @@ if($isAdmin){
 		include 'ajaxupdates.php';
 	}
 
+	if($params[2] == "query") {
+		include 'ajaxqueries.php';
+	}
+
 }
 ?>

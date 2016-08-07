@@ -33,4 +33,8 @@
 	if($isUser && isset($params[2]) && $params[2]=="register") {
 		echo registerUser($_POST['cid'], $_SESSION['sap'], $_POST['status']);
 	}
+
+	if($isUser && isset($params[2]) && $params[2]=='query' && isset($params[3]) && $params[3]=='add') {
+		echo addQuery($_SESSION['sap'], $_POST['company'], htmlentities($_POST['querytext'], ENT_QUOTES));
+	}
 ?>

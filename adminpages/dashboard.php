@@ -6,6 +6,7 @@
   $indiv = isset($params[1]) && isset($params[2]) && $params[1]=="view" && $params[2]=='company';
   $email = isset($params[1]) && isset($params[2]) && $params[1]=="send" && $params[2]=='email';
   $update = isset($params[1]) && isset($params[2]) && $params[1]=="view" && $params[2]=='updates';
+  $query = isset($params[1]) && isset($params[2]) && $params[1]=="view" && $params[2]=='queries';
 ?>
     <div class="container-fluid">
       <div class="row">
@@ -18,7 +19,7 @@
           </ul>
           <ul class="nav nav-sidebar">
             <li <?php if($update)echo 'class="active"'; ?>><a href="/admin/view/updates">View Updates</a></li>
-            <li><a href="">Nav item again</a></li>
+            <li <?php if($query)echo 'class="active"'; ?>><a href="/admin/view/queries">View Queries</a></li>
             <li><a href="">One more nav</a></li>
             <li><a href="">Another nav item</a></li>
             <li><a href="">More navigation</a></li>
@@ -46,6 +47,8 @@
             include "adminpages/sendmail.php";
           } else if ($update) {
             include "adminpages/updates.php";
+          } else if ($query) {
+            include 'adminpages/queries.php';
           }
           ?>
         </div>

@@ -106,5 +106,79 @@
 		return $updates;
 	}
 
+	function getQuery($id) {
+		global $cxn;
+		$qry = "SELECT * FROM `queries` WHERE `id`='$id'";
+		return $cxn->query($qry)->fetch_assoc();
+	}
+
+	function getMyUnansweredQueires($sap, $cid) {
+		global $cxn;
+		$qry = "SELECT * FROM `queries` WHERE `answered`='0' AND `sapid` = '$sap' AND `cid` = '$cid'";
+		$qry = $cxn->query($qry);
+		$ret = array();
+		while($row = $qry->fetch_assoc()) {
+			$ret[] = $row;
+		}
+		return $ret;
+	}
+
+	function getMyPrivateQueires($sap, $cid) {
+		global $cxn;
+		$qry = "SELECT * FROM `queries` WHERE `answered`='2' AND `sapid` = '$sap' AND `cid` = '$cid'";
+		$qry = $cxn->query($qry);
+		$ret = array();
+		while($row = $qry->fetch_assoc()) {
+			$ret[] = $row;
+		}
+		return $ret;
+	}
+
+
+	function getAnsweredQueries($cid) {
+		global $cxn;
+		$qry = "SELECT * FROM `queries` WHERE `answered`='1' AND `cid` = '$cid'";
+		$qry = $cxn->query($qry);
+		$ret = array();
+		while($row = $qry->fetch_assoc()) {
+			$ret[] = $row;
+		}
+		return $ret;	
+	}
+
+	function getAllUnansweredQueries($cid) {
+		global $cxn;
+		$qry = "SELECT * FROM `queries` WHERE `answered`='0' AND `cid` = '$cid'";
+		$qry = $cxn->query($qry);
+		$ret = array();
+		while($row = $qry->fetch_assoc()) {
+			$ret[] = $row;
+		}
+		return $ret;	
+	}
+
+	function getAllQueriesAdmin($cid) {
+		global $cxn;
+		$ret = getAnsweredQueries($cid);
+		$qry = "SELECT * FROM `queries` WHERE `answered`='2' AND `cid` = '$cid'";
+		$qry = $cxn->query($qry);
+		while($row = $qry->fetch_assoc()) {
+			$ret[] = $row;
+		}
+		return $ret;
+	}
+
+	function getAllMyQueries($sap) {
+		global $cxn;
+		$qry = "SELECT * FROM `queries`, `event` WHERE `queries`.`cid` = `event`.`id` AND `queries`.`sapid` ='$sap'";
+		$qry = $cxn->query($qry);
+		$ret = array();
+		while($row = $qry->fetch_assoc()) {
+			$ret[] = $row;
+		}
+		return $ret;
+
+	}
+
 
 ?>

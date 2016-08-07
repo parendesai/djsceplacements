@@ -8,7 +8,32 @@
 	</div>
 	<div id="collapseQueries" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingQueries">
 	  <div class="panel-body">
-	    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+	    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#queriesModal">Ask a Question</button>
 	  </div>
+	  <?php if(count($unanswered)>0) { ?>
+	  	<div class="panel-footer">My Unanswered Questions</div>
+  		<ul class="list-group">
+  			<?php for ($i=0; $i < count($unanswered); $i++) { ?>
+  				<li class="list-group-item"><?php echo $unanswered[$i]['querytext'];?></li>
+  			<?php } ?>
+	  	</ul>
+	  <?php }
+	  if(count($answered)+count($private)>0) { ?>
+		  <div class="panel-footer">All Questions</div>
+		  <ul class="list-group">
+		  	<?php for ($i=count($private)-1; $i > -1 ; $i--) { ?>
+			  <li class="list-group-item list-group-item-info">
+			  	<p><b><?php echo $private[$i]['querytext'];?></b></p>
+			  	<p><?php echo $private[$i]['answer'];?></p>
+			  </li>
+			<?php } ?>
+			<?php for ($i=count($answered)-1; $i > -1 ; $i--) { ?>
+			  <li class="list-group-item <?php if($answered[$i]['sapid']==$_SESSION['sap']) { ?>list-group-item-success <?php } ?>">
+			  	<p><b><?php echo $answered[$i]['querytext'];?></b></p>
+			  	<p><?php echo $answered[$i]['answer'];?></p>
+			  </li>
+			<?php } ?>
+		  </ul>
+	  <?php } ?>
 	</div>
 </div>

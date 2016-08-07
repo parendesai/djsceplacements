@@ -9,6 +9,9 @@
 			$user = getUser($sap);
 			$isReg = isRegistered($sap, $comp['id']);
 			$updates = getUpdates($comp['id']);
+			$unanswered = getMyUnansweredQueires($sap, $comp['id']);
+			$private = getMyPrivateQueires($sap, $comp['id']);
+			$answered = getAnsweredQueries($comp['id']);
 		}
 	} else {
 		$notfound = 1;
@@ -34,5 +37,6 @@
 	  <?php include 'tabs/queriestab.php'; ?>
 	</div>
   </div>	  
-<?php } ?>
+<?php include 'modals/addquerymodal.php';
+} ?>
 

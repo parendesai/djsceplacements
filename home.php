@@ -40,6 +40,15 @@
 		} else {
 			include 'pages/login.php';
 		}
+	}
+	else if ($params[0]=="queries") {
+		if($isUser) {
+			include 'pages/updates.php';
+		} else if(isset($_SESSION['usap'])) {
+			include 'pages/edit.php';
+		} else {
+			include 'pages/login.php';
+		}
 	} else {
 		include 'pages/home.php';
 	}			 

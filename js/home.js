@@ -37,4 +37,25 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	$('#queryAddForm').on('submit', function(e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $addButton = $('#queryAdd');
+		console.log($('#updateEditor').val());
+		if(name_check($('#updateEditor').val())) {
+			$('#updateEditor').parent().removeClass('has-error').addClass('has-success');
+			$addButton.button('loading');
+			$.ajax({
+				method: 'POST',
+				url: '/user/ajax/query/add',
+				data: $this.serialize(),
+				success: function(result) {
+					location.reload();
+				}
+			});
+		} else {
+			$('#updateEditor').parent().addClass('has-error').removeClass('has-success');			
+		}
+	});
 });

@@ -131,4 +131,24 @@
 		return $qry;
 	}
 
+	function addQuery($sap, $cid, $querytext) {
+		global $cxn;
+		$qry = "INSERT INTO `queries` (`id`, `answered`, `cid`, `sapid`, `answer`, `querytext`) VALUES (NULL, '0', '$cid', '$sap', NULL, '$querytext')";
+		return $cxn->query($qry);
+	}
+
+	function editQuery($id, $querytext, $answer, $answered) {
+		global $cxn;
+		$qry = "UPDATE `queries` SET `querytext`='$querytext', `answer`='$answer', `answered`='$answered' WHERE `id`='$id'";
+		return $cxn->query($qry);
+	}
+
+	function deleteQuery($id) {
+		global $cxn;
+		$qry = "DELETE FROM `queries` WHERE `id`='$id'";
+		$qry = $cxn->query($qry);
+		return $qry;
+	}
+
+
 ?>

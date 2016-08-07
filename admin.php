@@ -32,4 +32,5 @@
 <script type="text/javascript" src="/js/admindelete.js"></script>
 <script type="text/javascript" src="/js/adminuser.js"></script>
 <script type="text/javascript" src="/js/adminaddupdate.js"></script>
+<script type="text/javascript" src="/js/adminquery.js"></script>
 <?php include 'pages/footer.php'; ?>
