@@ -45,9 +45,10 @@
 		return $set;
 	}
 
-	function editUser($sap, $phone, $email, $fname, $lname, $ssc, $hsc, $cgpa, $address, $internships, $gender, $lang) {
+	function editUser($sap, $phone, $email, $fname, $lname, $ssc, $hsc, $cgpa, $address, $internships, $gender, $lang, $sscYear, $hscYear, $curBacklog, $pastBacklog) {
 		global $cxn;
-		$qry = "UPDATE `users` SET `phone` = '$phone', `email`='$email', `fname`='$fname', `lname`='$lname', `ssc`='$ssc', `hsc`='$hsc', `cgpa`='$cgpa', `address`='$address', `internships`='$internships',`updated`='1',`gender`='$gender', `preflang`='$lang' WHERE `sap` = '$sap'";
+		$beper = convertCGPAtoPercentage($cgpa);
+		$qry = "UPDATE `users` SET `phone` = '$phone', `email`='$email', `fname`='$fname', `lname`='$lname', `ssc`='$ssc', `hsc`='$hsc', `cgpa`='$cgpa', `address`='$address', `internships`='$internships',`updated`='1',`gender`='$gender', `preflang`='$lang',`sscYear`='$sscYear', `hscYear`='$hscYear', `curBacklog`='$curBacklog', `pastBacklog`='$pastBacklog', `beper`='$beper' WHERE `sap` = '$sap'";
 		$qry = $cxn->query($qry);
 		$user = getUser($sap);
 		if(isset($_SESSION['usap'])) { 

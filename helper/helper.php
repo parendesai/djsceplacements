@@ -1,10 +1,16 @@
 <?php 
-	$deets = array('fname'=>"First Name",'lname'=>"Last Name",'email'=>"Email",'phone'=>"Phone Number",'ssc'=>"10th Standard", 'hsc'=>"12th Standard/ Diploma",'cgpa'=>"CGPA",'address'=>"Address",'internships'=>"Internships", 'gender'=>"Gender", 'preflang'=>"Preferred Language");
-	$priority = array('fname'=>0,'lname'=>1,'email'=>2,'phone'=>3,'ssc'=>4, 'hsc'=>5,'cgpa'=>6,'gender'=>7, 'preflang'=>8,'address'=>9,'internships'=>10);
+	$deets = array('fname'=>"First Name",'lname'=>"Last Name",'email'=>"Email",'phone'=>"Phone Number",'ssc'=>"10th Standard", 'hsc'=>"12th Standard/ Diploma",'cgpa'=>"CGPA",'address'=>"Address",'internships'=>"Internships", 'gender'=>"Gender", 'preflang'=>"Preferred Language", 'hscYear'=>"Year of Passing 12th/Diploma",'sscYear'=>"Year of Passing 10th",'curBacklog'=>"Current Backlog",'pastBacklog'=>'History of Backlog', 'beper'=>"BE Percentage");
+	$priority = array('fname'=>0,'lname'=>1,'email'=>2,'phone'=>3,'cgpa'=>4,'beper'=>5,'curBacklog'=>6,'pastBacklog'=>7,'hsc'=>8,'hscYear'=>9,'ssc'=>10,'sscYear'=>11,'gender'=>12,'preflang'=>13,'address'=>14,'internships'=>15);
 	include 'env.php';
 	include 'db.php';
 	include 'getter.php';
 	include 'setter.php';
+
+	function convertCGPAtoPercentage($cgpa) {
+		if($cgpa >= 7) $percentage = 7.4*$cgpa;
+		else $percentage = 7.2*$cgpa;
+		return $percentage+12;
+	}
 
 	function createSlug($name) {
 		$lettersNumbersSpacesHyphens = '/[^\-\s\pN\pL]+/u';

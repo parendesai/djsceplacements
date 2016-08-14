@@ -29,8 +29,13 @@
               <option value="phone">Phone</option>
               <option value="email">Email</option>
               <option value="ssc">10th Standard Marks</option>
+              <option value="sscYear">Year of Passing 10th Standard Marks</option>
               <option value="hsc">12th Standard/Diploma Marks</option>
+              <option value="hscYear">Year of Passing 12th Standard/Diploma Marks</option>
               <option value="cgpa">CGPA</option>
+              <option value="beper">BE Percentage</option>
+              <option value="curBacklog">Current Backlog</option>
+              <option value="pastBacklog">History of Backlog</option>
               <option value="gender">Gender</option>
               <option value="preflang">Prefered Language</option>
               <option value="address">Address</option>

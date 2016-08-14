@@ -22,7 +22,7 @@
 	  </div>
 	  <div class="form-group">
 	    <label class="control-label" for="emailInput">Email</label>
-	    <input type="text" class="form-control" id="emailInput" name="email" value="<?php echo $qry['email'];?>">
+	    <input type="text" class="form-control" id="emailInput" name="email" autofocus value="<?php echo $qry['email'];?>">
 	  </div>
 	  <div class="form-group">
 	    <label class="control-label" for="phoneInput">Phone</label>
@@ -41,12 +41,36 @@
 	    <input type="text" class="form-control" id="sscInput" name="ssc" value="<?php echo $qry['ssc'];?>">
 	  </div>
 	  <div class="form-group">
+	    <label class="control-label" for="sscYearInput">Year of Passing</label>
+	    <input type="text" class="form-control" id="sscYearInput" name="sscYear" value="<?php echo $qry['sscYear'];?>">
+	  </div>
+	  <div class="form-group">
 	    <label class="control-label" for="hscInput">12th Standard/Diploma Marks</label>
 	    <input type="text" class="form-control" id="hscInput" name="hsc" value="<?php echo $qry['hsc'];?>">
 	  </div>
 	  <div class="form-group">
+	    <label class="control-label" for="hscYearInput">Year of Passing</label>
+	    <input type="text" class="form-control" id="hscYearInput" name="hscYear" value="<?php echo $qry['hscYear'];?>">
+	  </div>
+	  <div class="form-group">
 	    <label class="control-label" for="cgpaInput">CGPA</label>
 	    <input type="text" class="form-control" id="cgpaInput" name="cgpa" value="<?php echo $qry['cgpa'];?>">
+	  </div>
+	  <div class="form-group">
+	    <label class="control-label" for="curBacklogInput">Current Backlog</label>
+	    <select class="form-control" id="curBacklogInput" name="curBacklog">
+	    	<?php for($i = 0;$i <= 10; $i++) { ?>
+	    		<option value="<?php echo $i;?>" <?php if($qry['curBacklog'] == $i) echo 'selected';?>><?php echo $i;?></option>
+	    	<?php } ?>
+	    </select>
+	  </div>
+	  <div class="form-group">
+	    <label class="control-label" for="pastBacklogInput">History of Backlog</label>
+	    <select class="form-control" id="pastBacklogInput" name="pastBacklog">
+	    	<?php for($i = 0;$i <= 10; $i++) { ?>
+	    		<option value="<?php echo $i;?>" <?php if($qry['pastBacklog'] == $i) echo 'selected';?>><?php echo $i;?></option>
+	    	<?php } ?>
+	    </select>
 	  </div>
 	  <div class="form-group">
 	    <label class="control-label" for="genderInput">Gender</label>

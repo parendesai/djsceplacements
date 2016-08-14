@@ -18,3 +18,7 @@ function percent_check(per) {
 function point_check(per) {
 	return per!=null && per!=undefined && per!="" && parseFloat(per) >=0 && parseFloat(per) <= 10;	
 }
+
+function year_check(year) {
+	return year!=null && year!=undefined && year!="" && /^[0-9]{4}$/.test(year);
+}

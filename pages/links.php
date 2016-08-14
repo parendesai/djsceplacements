@@ -9,4 +9,5 @@
     <link rel="shortcut icon" href="/img/paren.jpg">
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">

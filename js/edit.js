@@ -1,7 +1,30 @@
 /*
 Edit details Related JS
 */
+$(function(){
+	$('#sscYearInput').datetimepicker({
+		format: "YYYY",
+		inline: true,
+        useCurrent: false
+	});
+    $('#hscYearInput').datetimepicker({
+    	format: "YYYY",
+    	inline: true,
+        useCurrent: false //Important! See issue #1075
+    });
+    // $("#sscYearInput").on("dp.change", function (e) {
+    //     $('#hscYearInput').data("DateTimePicker").minDate(e.date);
+    // });
+    // $("#hscYearInput").on("dp.change", function (e) {
+    //     $('#sscYearInput').data("DateTimePicker").maxDate(e.date);
+    // });
+});
+
 $(document).ready(function () {
+
+	
+
+
 	$('#editForm').on('submit', function(e) {
 		e.preventDefault();
 		var $this = $(this);
@@ -14,6 +37,9 @@ $(document).ready(function () {
 		var hscc = percent_check($('#hscInput').val());
 		var cgpac = point_check($('#cgpaInput').val());
 		var addressc = name_check($('#addrInput').val());
+		var sscYearc = year_check($('#sscYearInput').val());
+		var hscYearc = year_check($('#hscYearInput').val());
+
 		if(!emailc){
 			$('#emailInput').parent().addClass('has-error').removeClass('has-success');
 		} else {
@@ -54,7 +80,21 @@ $(document).ready(function () {
 		} else {
 			$('#addrInput').parent().addClass('has-success').removeClass('has-error');
 		}
-		if(emailc && phonec && fnamec && lnamec && sscc && hscc && cgpac && addressc) {
+		if(!sscYearc){
+			$('#sscYearInput').parent().addClass('has-error').removeClass('has-success');
+		} else {
+			$('#sscYearInput').parent().addClass('has-success').removeClass('has-error');
+		}
+		if(!hscYearc){
+			$('#hscYearInput').parent().addClass('has-error').removeClass('has-success');
+		} else {
+			$('#hscYearInput').parent().addClass('has-success').removeClass('has-error');
+		}
+		$('#curBacklogInput').parent().addClass('has-success');
+		$('#pastBacklogInput').parent().addClass('has-success');
+		$('#genderInput').parent().addClass('has-success');
+		$('#langInput').parent().addClass('has-success');
+		if(emailc && phonec && fnamec && lnamec && sscc && hscc && cgpac && addressc && hscYearc && sscYearc) {
 			$editButton.button('loading');
 			$.ajax({
 				method: "post",
