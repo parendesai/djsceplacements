@@ -20,5 +20,8 @@ if($isAdmin){
 		include 'ajaxqueries.php';
 	}
 
+	if($params[2] == "blog") {
+		include 'ajaxblog.php';
+	}
 }
 ?>

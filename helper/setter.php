@@ -150,5 +150,25 @@
 		return $qry;
 	}
 
+	function addBlog($user, $company, $title, $blog, $date, $slug) {
+		global $cxn;
+		$qry = "INSERT INTO `blog` (`id`, `slug`, `cid`, `sapid`, `title`, `date`, `blog`, `approved`) VALUES (NULL, '$slug', '$company', '$user', '$title', '$date', '$blog', '0')";
+		$qry = $cxn->query($qry);
+		return $qry;
+
+	}
+
+	function approveBlog($id) {
+		global $cxn;
+		$qry = "UPDATE `blog` SET `approved`='1' WHERE `id`='$id'";
+		return $cxn->query($qry);
+	}
+
+	function disapproveBlog($id) {
+		global $cxn;
+		$qry = "UPDATE `blog` SET `approved`='2' WHERE `id`='$id'";
+		return $cxn->query($qry);
+	}
+
 
 ?>

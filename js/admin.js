@@ -1,4 +1,20 @@
 $(document).ready(function() {
+	var state = 0;
+	$sidebar = $('#sidebar');
+	$sidebar.hide();
+	$('#hamburger').click(function () {
+		$this = $(this).parent();
+		if(state==0){
+			$sidebar.show();
+			$this.addClass('active');
+		} else {
+			$sidebar.hide();
+			$this.removeClass('active');
+		}
+		state += 1;
+		state %= 2;
+	});
+
 	$('.email-select').select2();
 
 	$('#descr, #mail-editor, .updateEditor').summernote({

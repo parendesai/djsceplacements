@@ -84,6 +84,18 @@
 		return $like;
 	}
 
+	function getSimilarSlugsBlog($slug) {
+		global $cxn;
+		$like = $slug.'%';
+		$qry = "SELECT * FROM `event` WHERE `slug` LIKE '$like'";
+		$qry = $cxn->query($qry);
+		$like = array();
+		while($row = $qry->fetch_assoc()) {
+			$like[] = $row;
+		}
+		return $like;
+	}
+
 	function getAllUsers() {
 		global $cxn;
 		$users = getActivatedUsers();
@@ -179,6 +191,70 @@
 		return $ret;
 
 	}
+
+	function getBlog($id=null, $slug=null) {
+		global $cxn;
+		if(isset($id))
+			$qry = "SELECT * FROM `blog` WHERE `id`='$id'";
+		else if(isset($slug))
+			$qry = "SELECT * FROM `blog` WHERE `slug`='$slug'";
+		else return -1;
+		$qry = $cxn->query($qry);
+		if($qry->num_rows==0) return -1;
+		return $qry->fetch_assoc();
+	}
+
+	function getBlogCount($cid=null, $sapid=null) {
+		global $cxn;
+		if(isset($cid)) $qry = "SELECT COUNT(*) FROM `blog` WHERE `cid`='$cid' AND `approved`='1' ORDER BY `id` DESC ";
+		else if(isset($sapid)) $qry = "SELECT COUNT(*) FROM `blog` WHERE `sapid`='$sapid' AND `approved`='1' ORDER BY `id` DESC ";
+		else $qry = "SELECT COUNT(*) FROM `blog` WHERE `approved`='1' ORDER BY `id` DESC ";
+		$qry = $cxn->query($qry);
+		return $qry->fetch_assoc()['COUNT(*)'];
+	}
+
+	function getBlogs($page, $cid=null, $sapid=null) {
+		global $cxn;
+		$start = ($page-1)*3;
+		$size = 3;
+		if(isset($cid)) $qry = "SELECT * FROM `blog` WHERE `cid`='$cid' AND `approved`='1' ORDER BY `id` DESC LIMIT ".$start.", ".$size;
+		else if(isset($sapid)) $qry = "SELECT * FROM `blog` WHERE `sapid`='$sapid' AND `approved`='1' ORDER BY `id` DESC LIMIT ".$start.", ".$size;
+		else $qry = "SELECT * FROM `blog` WHERE `approved`='1' ORDER BY `id` DESC LIMIT ".$start.", ".$size;
+		$qry = $cxn->query($qry);
+		$ret = array();
+		while($row = $qry->fetch_assoc()) {
+			$ret[] = $row;
+		}
+		return $ret;
+
+	}
+
+	function getUnansweredBlogsCount() {
+		global $cxn;
+		$qry = "SELECT COUNT(*) FROM `blog` WHERE `approved`='0'";
+		$qry = $cxn->query($qry);
+		return $qry->fetch_assoc()['COUNT(*)'];
+	}
+
+	function getUnapprovedBlogs(){
+		global $cxn;
+		$qry = "SELECT * FROM `blog` WHERE `approved`='0'";
+		$qry = $cxn->query($qry);
+		$ret = array();
+		while($row = $qry->fetch_assoc()) {
+			$ret[] = $row;
+		}
+		return $ret;
+	}
+
+	function getUnansweredQueriesCount() {
+		global $cxn;
+		$qry = "SELECT COUNT(*) FROM `queries` WHERE `answered`='0'";
+		$qry = $cxn->query($qry);
+		return $qry->fetch_assoc()['COUNT(*)'];
+	}
+
+
 
 
 ?>

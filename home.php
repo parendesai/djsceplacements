@@ -28,6 +28,8 @@
 	else if ($params[0]=="login") {
 		if($isUser) {
 			header("Location: /");
+		} else if(isset($_SESSION['usap'])){
+			include 'pages/edit.php';
 		} else {
 			include 'pages/login.php';
 		}

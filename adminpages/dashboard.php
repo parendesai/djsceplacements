@@ -7,20 +7,25 @@
   $email = isset($params[1]) && isset($params[2]) && $params[1]=="send" && $params[2]=='email';
   $update = isset($params[1]) && isset($params[2]) && $params[1]=="view" && $params[2]=='updates';
   $query = isset($params[1]) && isset($params[2]) && $params[1]=="view" && $params[2]=='queries';
+  $blogs = isset($params[1]) && isset($params[2]) && $params[1]=="view" && $params[2]=='blogs';
+  $blogCount = getUnansweredBlogsCount();
+  $queryCount = getUnansweredQueriesCount();
 ?>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
+      <div class="backdrop" id="sidebar">
+        <div class="col-sm-3 col-md-2 sidebar" >
           <ul class="nav nav-sidebar">
             <li <?php if($admin)echo 'class="active"'; ?>><a href="/admin/">Overview <span class="sr-only">(current)</span></a></li>
             <li <?php if($create)echo 'class="active"'; ?>><a href="/admin/company/create/">Add New Company</a></li>
             <li <?php if($view)echo 'class="active"'; ?>><a href="/admin/company/view/">View All Companies</a></li>
-            
           </ul>
           <ul class="nav nav-sidebar">
             <li <?php if($update)echo 'class="active"'; ?>><a href="/admin/view/updates">View Updates</a></li>
-            <li <?php if($query)echo 'class="active"'; ?>><a href="/admin/view/queries">View Queries</a></li>
-            <li><a href="">One more nav</a></li>
+            <li <?php if($query)echo 'class="active"'; ?>><a href="/admin/view/queries">View Queries <span class="badge pull-right"><?php echo $queryCount;?></a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li <?php if($blogs)echo 'class="active"'; ?>><a href="/admin/view/blogs">Blogs <span class="badge pull-right" id="blog-count"><?php echo $blogCount;?></span></a></li>
             <li><a href="">Another nav item</a></li>
             <li><a href="">More navigation</a></li>
           </ul>
@@ -30,7 +35,8 @@
             <li <?php if($stud)echo 'class="active"'; ?>><a href="/admin/view/all/">View All Students</a></li>
           </ul>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      </div>
+        <div class="main">
           <h1 class="page-header">Dashboard</h1>
 
           <?php if($admin) {
@@ -49,6 +55,8 @@
             include "adminpages/updates.php";
           } else if ($query) {
             include 'adminpages/queries.php';
+          } else if ($blogs) {
+            include 'adminpages/blog.php';
           }
           ?>
         </div>

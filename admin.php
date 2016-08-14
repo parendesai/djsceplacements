@@ -33,4 +33,5 @@
 <script type="text/javascript" src="/js/adminuser.js"></script>
 <script type="text/javascript" src="/js/adminaddupdate.js"></script>
 <script type="text/javascript" src="/js/adminquery.js"></script>
+<script type="text/javascript" src="/js/adminblog.js"></script>
 <?php include 'pages/footer.php'; ?>
