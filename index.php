@@ -1,4 +1,5 @@
 <?php 
+	$department = explode(".", $_SERVER['SERVER_NAME'])[0];
 	include 'helper/helper.php';
 	session_start();
 	$isUser = isset($_SESSION['sap']);

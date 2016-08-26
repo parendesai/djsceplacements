@@ -10,12 +10,17 @@
 		  <li><a href="/blog">Blog Home</a></li>
 		  <li class="active"><?php echo ucwords($params[1]); ?></li>
 		</ol>
+		<ol class="breadcrumb pull-right">
+			<?php if($isUser) { ?>
+				<li class="active"><?php echo $_SESSION['name']; ?></li>
+			<?php } else { ?>
+		  		<li><a role="button" data-toggle="popover" id="loginpopover" data-placement="bottom" title="Login" >Login</a><div class="hidden"><div id="popover-content"><?php include 'pages/loginpopover.php';?></div></div></li>
+		  	<?php } ?>
+		</ol>
       <div class="blog-header">
         <h1 class="blog-title">The Placement Blog</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-        <?php if($isUser) { ?>
-        	<p class="lead blog-description">Logged in as <?php echo $_SESSION['name'];?></p>
-        <?php }?>
+        <p class="lead blog-description">Words for experiences.</p>
+        
       </div>
 <?php 
 	if(!isset($params[1])) header("location: /blog/page/1");
@@ -33,7 +38,7 @@
 <script type="text/javascript" src="/js/authentication.js"></script>
 <script type="text/javascript" src="/js/summernote.min.js"></script>
 <script type="text/javascript" src="/js/select2.full.min.js"></script>
-<script type="text/javascript" src="/js/blog.js"></script>
 <script type="text/javascript" src="/js/login.js"></script>
+<script type="text/javascript" src="/js/blog.js"></script>
 <script type="text/javascript" src="/js/edit.js"></script>
 <?php include 'pages/footer.php'; ?>

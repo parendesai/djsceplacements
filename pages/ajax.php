@@ -21,7 +21,7 @@
 
 	if(($isUser || isset($_SESSION['usap'])) && isset($params[2]) && $params[2]=='edit') {
 		if(isset($_SESSION['sap'])) {$sap = $_SESSION['sap'];} else { $sap = $_SESSION['usap']; $ret = "reload";}
-		$user = editUser($sap, htmlspecialchars($_POST['phone'], ENT_QUOTES), htmlspecialchars($_POST['email'], ENT_QUOTES), htmlspecialchars($_POST['fname'], ENT_QUOTES), htmlspecialchars($_POST['lname'], ENT_QUOTES), htmlspecialchars($_POST['ssc'], ENT_QUOTES), htmlspecialchars($_POST['hsc'], ENT_QUOTES), htmlspecialchars($_POST['cgpa'], ENT_QUOTES), htmlspecialchars($_POST['address'], ENT_QUOTES), htmlspecialchars($_POST['internships'], ENT_QUOTES), $_POST['gender'], $_POST['lang'], $_POST['sscYear'], $_POST['hscYear'], $_POST['curBacklog'], $_POST['pastBacklog']);
+		$user = editUser($sap, htmlspecialchars($_POST['phone'], ENT_QUOTES), htmlspecialchars($_POST['email'], ENT_QUOTES), htmlspecialchars($_POST['fname'], ENT_QUOTES), htmlspecialchars($_POST['lname'], ENT_QUOTES), htmlspecialchars($_POST['ssc'], ENT_QUOTES), htmlspecialchars($_POST['hsc'], ENT_QUOTES), htmlspecialchars($_POST['cgpa'], ENT_QUOTES), htmlspecialchars($_POST['address'], ENT_QUOTES), htmlspecialchars($_POST['internships'], ENT_QUOTES), $_POST['gender'], $_POST['lang'], $_POST['sscYear'], $_POST['hscYear'], $_POST['curBacklog'], $_POST['pastBacklog'], $_POST['dob']);
 		if(isset($ret)) {echo "reload"; }
 		else print_r($user);
 	}

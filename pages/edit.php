@@ -80,6 +80,10 @@
 	    </select>
 	  </div>
 	  <div class="form-group">
+	    <label class="control-label" for="dobInput">Date of Birth</label>
+	    <input type="text" class="form-control" id="dobInput" name="dob" value="<?php echo $qry['dob'];?>">
+	  </div>
+	  <div class="form-group">
 	    <label class="control-label" for="langInput">Preferred Language</label>
 	    <select class="form-control" id="langInput" name="lang">
 	    	<option value="C/C++" <?php if($qry['preflang'] == "C/C++") echo 'selected';?>>C/C++</option>

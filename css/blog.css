@@ -80,9 +80,14 @@ h6, .h6 {
 /*
  * Blog posts
  */
-
 .blog-post {
   margin-bottom: 60px;
+}
+.multiple {
+  /*margin-bottom: 60px;*/
+  max-height: 700px;
+  overflow: hidden;
+  position: relative;
 }
 .blog-post-title {
   margin-bottom: 5px;
@@ -112,4 +117,24 @@ h6, .h6 {
 .breadcrumb {
   background: white;
   margin-top: 50px;
+}
+
+div.popover-content>a {
+  overflow-wrap: break-word;
+}
+
+.fadded-end {
+    height: 200px;
+    width: 100%;
+    z-index: 99;
+    position: absolute;
+    bottom: 0;
+    background: url("/img/bottom-fade.png") bottom center no-repeat;
+}
+
+.read-more {
+  position: absolute;
+  z-index: 101;
+  bottom: 0;
+  right: 0;
 }

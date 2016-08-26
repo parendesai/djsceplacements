@@ -1,8 +1,8 @@
 /*
 Login Related JS
 */
-$(document).ready(function () {
-	$('#loginForm').on('submit', function(e) {
+$(document).on('submit', '#loginForm',function (e) {
+	// $('#loginForm').on('submit', function(e) {
 		e.preventDefault();
 		var $this = $(this);
 		var $loginButton = $('#loginButton');
@@ -18,10 +18,10 @@ $(document).ready(function () {
 				} else {
 					$('#alertInvalid').removeClass("hide");
 					$("#passwordInput").val('');
-					$loginButton.button('reset');
+					// $loginButton.button('reset');
 					
 				}
 			}
 		});
-	});
+	// });
 });

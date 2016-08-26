@@ -32,18 +32,32 @@
 							->setTitle($company['name'].' - Responses');
 		$file->setActiveSheetIndex(0)->setCellValue("A1", '#')
 								->setCellValue("B1", 'SAPID');
-		for ($i=0; $i < count($fields); $i++) { 
-			$file->getActiveSheet()->setCellValue(chr(ord("A")+($i+2)).'1', $deets[$fields[$i]['userdetail']]);
+		$k=0;
+		for ($i=0; $i < count($fields); $i++,$k++) { 
+			$file->getActiveSheet()->setCellValue(chr(ord("A")+($k+2)).'1', $deets[$fields[$i]['userdetail']]);
+			if($fields[$i]['userdetail'] == "hsc") {
+				$file->getActiveSheet()->setCellValue(chr(ord("A")+($k+3)).'1', "Diploma Percentage");
+				$k++;
+			}
 		}
-		$c=0;
+		// $c=0;
 		for ($i=0; $i < count($users); $i++) { 
 			if($users[$i]['cgpa']>=$_POST['mincgpa'] && $users[$i]['ssc']>=$_POST['minssc'] && $users[$i]['hsc']>=$_POST['minhsc']){	
-					$file->getActiveSheet()->setCellValue("A".($c+2), $c+1)
-										->setCellValue("B".($c+2), $users[$i]['sap']);
-					for ($j=0; $j < count($fields); $j++) { 
-						$file->getActiveSheet()->setCellValue(chr(ord("A")+($j+2)).($c+2), $users[$i][$fields[$j]['userdetail']]);		
+					$file->getActiveSheet()->setCellValue("A".($i+2), $i+1)
+										->setCellValue("B".($i+2), $users[$i]['sap']);
+					for ($j=0,$k=0; $j < count($fields); $j++,$k++) {
+						if ($fields[$j]['userdetail']=="hsc") {
+						 	if ($users[$i]['sap'][7]=="0") {
+						 		$file->getActiveSheet()->setCellValue(chr(ord("A")+($k+2)).($i+2), $users[$i][$fields[$j]['userdetail']]);
+						 	} else {
+						 		$file->getActiveSheet()->setCellValue(chr(ord("A")+($k+3)).($i+2), $users[$i][$fields[$j]['userdetail']]);
+						 	}
+						 	$k++; 	
+						} else {
+							$file->getActiveSheet()->setCellValue(chr(ord("A")+($k+2)).($i+2), $users[$i][$fields[$j]['userdetail']]);
+						}
 					}
-					$c++;
+					// $c++;
 			}
 		}
 		$objWriter = PHPExcel_IOFactory::createWriter($file, 'Excel2007');

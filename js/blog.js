@@ -1,6 +1,11 @@
 $(document).ready(function () {
-
-	$('[data-toggle="popover"]').popover({html:true});
+	$('#loginpopover').popover({
+		html:true,  
+		content: function() {
+      		return $("#popover-content").html();
+	    }
+	});
+	$('[data-toggle="popover"]').popover({html:true, container:'body'});
 
 	$('.select2').select2();
 

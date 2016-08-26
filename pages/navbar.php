@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
         <li <?php if(isset($params[0])&&$params[0]=='queries') { ?>class="active"<?php }?>><a href="/queries">Queries</a></li>
-        <li><a href="/blog" target="blank">Experiences</a></li>
+        <li><a href="/blog" target="_blank">Experiences</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         

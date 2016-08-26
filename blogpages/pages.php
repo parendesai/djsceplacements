@@ -1,5 +1,7 @@
-<?php for($i=0; $i < count($blogs); $i++) {
-	$blog = $blogs[$i];
-	include 'post.php';
-}
+<?php 
+	$multiple= true;
+	for($i=0; $i < count($blogs); $i++) {
+		$blog = $blogs[$i];
+		include 'post.php';
+	}
 ?>

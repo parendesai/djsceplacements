@@ -36,6 +36,7 @@
 	          <option value="curBacklog">Current Backlog</option>
 	          <option value="pastBacklog">History of Backlog</option>
 	          <option value="gender">Gender</option>
+	          <option value="dob">Date of Birth</option>
 	          <option value="preflang">Prefered Language</option>
 	          <option value="address">Address</option>
 	          <option value="internships">Internships</option>

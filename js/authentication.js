@@ -22,3 +22,7 @@ function point_check(per) {
 function year_check(year) {
 	return year!=null && year!=undefined && year!="" && /^[0-9]{4}$/.test(year);
 }
+
+function dob_check(year) {
+	return year!=null && year!=undefined && year!="" && /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/.test(year);
+}

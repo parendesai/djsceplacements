@@ -12,6 +12,11 @@ $(function(){
     	inline: true,
         useCurrent: false //Important! See issue #1075
     });
+    $('#dobInput').datetimepicker({
+    	format: "DD/MM/YYYY",
+    	inline: true,
+        useCurrent: false //Important! See issue #1075
+    });
     // $("#sscYearInput").on("dp.change", function (e) {
     //     $('#hscYearInput').data("DateTimePicker").minDate(e.date);
     // });
@@ -39,6 +44,7 @@ $(document).ready(function () {
 		var addressc = name_check($('#addrInput').val());
 		var sscYearc = year_check($('#sscYearInput').val());
 		var hscYearc = year_check($('#hscYearInput').val());
+		var dobc = dob_check($('#dobInput').val());
 
 		if(!emailc){
 			$('#emailInput').parent().addClass('has-error').removeClass('has-success');
@@ -90,11 +96,16 @@ $(document).ready(function () {
 		} else {
 			$('#hscYearInput').parent().addClass('has-success').removeClass('has-error');
 		}
+		if(!dobc){
+			$('#dobInput').parent().addClass('has-error').removeClass('has-success');
+		} else {
+			$('#dobInput').parent().addClass('has-success').removeClass('has-error');
+		}
 		$('#curBacklogInput').parent().addClass('has-success');
 		$('#pastBacklogInput').parent().addClass('has-success');
 		$('#genderInput').parent().addClass('has-success');
 		$('#langInput').parent().addClass('has-success');
-		if(emailc && phonec && fnamec && lnamec && sscc && hscc && cgpac && addressc && hscYearc && sscYearc) {
+		if(emailc && phonec && fnamec && lnamec && sscc && hscc && cgpac && addressc && hscYearc && sscYearc && dobc) {
 			$editButton.button('loading');
 			$.ajax({
 				method: "post",
