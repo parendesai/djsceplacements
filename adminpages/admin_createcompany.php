@@ -21,25 +21,12 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="sapInput">Fields Required</label>
-	    <p>Hold down control for Windows/Linux and Command for Macs</p>
+	    <p class="text-muted">Hold down control for Windows/Linux and Command for Macs</p>
+			<?php $x = getAllFields(); ?>
 	    <select multiple class="form-control" size="9" name="details[]" id="fields">
-		      <option value="fname" selected>First Name</option>
-	          <option value="lname" selected>Last Name</option>
-	          <option value="phone" selected>Phone</option>
-	          <option value="email" selected>Email</option>
-	          <option value="ssc">10th Standard Marks</option>
-	          <option value="sscYear">Year of Passing 10th Standard Marks</option>
-	          <option value="hsc">12th Standard/Diploma Marks</option>
-	          <option value="hscYear">Year of Passing 12th Standard/Diploma Marks</option>
-	          <option value="cgpa">CGPA</option>
-	          <option value="beper">BE Percentage</option>
-	          <option value="curBacklog">Current Backlog</option>
-	          <option value="pastBacklog">History of Backlog</option>
-	          <option value="gender">Gender</option>
-	          <option value="dob">Date of Birth</option>
-	          <option value="preflang">Prefered Language</option>
-	          <option value="address">Address</option>
-	          <option value="internships">Internships</option>
+				<?php foreach ($x as $key => $value) { ?>
+					<option value="<?php echo $value['key']; ?>" <?php if($value['priority']<6 && $value['priority']!=2 && $value['priority']!=3) { ?>selected<?php } ?>><?php echo $value['title']; ?></option>
+				<?php } ?>
 	    </select>
 	  </div>
 	  <div class="form-group">

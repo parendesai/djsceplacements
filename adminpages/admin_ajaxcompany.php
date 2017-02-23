@@ -34,9 +34,10 @@
 								->setCellValue("B1", 'SAPID');
 		$k=0;
 		for ($i=0; $i < count($fields); $i++,$k++) { 
-			$file->getActiveSheet()->setCellValue(chr(ord("A")+($k+2)).'1', $deets[$fields[$i]['userdetail']]);
+			$z = intval(($k+2)/26)>0?chr(ord("A")+intval(($k+2)/26)-1):"";
+			$file->getActiveSheet()->setCellValue($z.chr(ord("A")+($k+2)%26).'1', $deets[$fields[$i]['userdetail']]);
 			if($fields[$i]['userdetail'] == "hsc") {
-				$file->getActiveSheet()->setCellValue(chr(ord("A")+($k+3)).'1', "Diploma Percentage");
+				$file->getActiveSheet()->setCellValue($z.chr(ord("A")+($k+3)%26).'1', "Diploma Percentage");
 				$k++;
 			}
 		}
@@ -46,15 +47,16 @@
 					$file->getActiveSheet()->setCellValue("A".($i+2), $i+1)
 										->setCellValue("B".($i+2), $users[$i]['sap']);
 					for ($j=0,$k=0; $j < count($fields); $j++,$k++) {
+						$z = intval(($k+2)/26)>0?chr(ord("A")+intval(($k+2)/26)-1):"";
 						if ($fields[$j]['userdetail']=="hsc") {
 						 	if ($users[$i]['sap'][7]=="0") {
-						 		$file->getActiveSheet()->setCellValue(chr(ord("A")+($k+2)).($i+2), $users[$i][$fields[$j]['userdetail']]);
+						 		$file->getActiveSheet()->setCellValue($z.chr(ord("A")+($k+2)%26).($i+2), $users[$i][$fields[$j]['userdetail']]);
 						 	} else {
-						 		$file->getActiveSheet()->setCellValue(chr(ord("A")+($k+3)).($i+2), $users[$i][$fields[$j]['userdetail']]);
+						 		$file->getActiveSheet()->setCellValue($z.chr(ord("A")+($k+3)%26).($i+2), $users[$i][$fields[$j]['userdetail']]);
 						 	}
 						 	$k++; 	
 						} else {
-							$file->getActiveSheet()->setCellValue(chr(ord("A")+($k+2)).($i+2), $users[$i][$fields[$j]['userdetail']]);
+							$file->getActiveSheet()->setCellValue($z.chr(ord("A")+($k+2)%26).($i+2), $users[$i][$fields[$j]['userdetail']]);
 						}
 					}
 					// $c++;

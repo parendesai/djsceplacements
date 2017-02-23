@@ -41,6 +41,18 @@
 		return -1;
 	}
 
+	function getAllFields(){
+		global $priority, $deets;
+		$result = array();
+		foreach ($deets as $key => $value) {
+			$result[$key] = array('title'=>$value, 'priority'=>$priority[$key], 'key'=>$key) ; 
+		}
+		usort($result, function($a, $b) {
+			return $a['priority'] - $b['priority'];
+		});
+		return $result;
+	}
+
 	function getUser($sap) {
 		global $cxn;
 		$user = "SELECT * FROM `users` WHERE `sap`='$sap'";

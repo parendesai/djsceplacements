@@ -8,6 +8,10 @@ $(document).ready(function() {
 		$this.find('#name').val($button.attr('data-name'));
 		$this.find('#slug').val($button.attr('data-slug'));
 		$this.find('#descr').summernote('code', $button.attr('data-desc'));
+		$.each($('#det>option'), function(i,e) {
+			$(this).removeAttr('selected');
+			console.log($(this).prop('selected'));
+		});
 		$.each($.parseJSON($button.attr('data-det')), function(i,e) {
 			$('#det option[value="'+e+'"]').prop('selected','true');
 		});
