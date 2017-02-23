@@ -4,7 +4,7 @@ $(document).ready(function () {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/users/makeadmin',
+			url: '/administrator/ajax/users/makeadmin',
 			data: {
 				sap: $this.attr('data-sap')
 			},
@@ -21,7 +21,7 @@ $(document).ready(function () {
 		$addButton.button('loading');
 		$.ajax({
 			method: "post",
-			url: '/admin/ajax/users/add',
+			url: '/administrator/ajax/users/add',
 			data: $this.serialize(),
 			success: function(result) { 
 				location.reload();
@@ -34,7 +34,7 @@ $(document).ready(function () {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/users/resetpass',
+			url: '/administrator/ajax/users/resetpass',
 			data: {
 				sap: $this.attr('data-sap')
 			},

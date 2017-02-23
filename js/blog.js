@@ -22,7 +22,7 @@ $(document).ready(function () {
 	$('#addBlog').click( function () {
 		$.ajax({
 			method: "POST",
-			url: "/blog/ajax/add",
+			url: "/experiences/ajax/add",
 			data: {
 				company: $('.select2').val(),
 				blog: $('.descr').summernote('code'),

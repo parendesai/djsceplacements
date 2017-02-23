@@ -4,7 +4,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/company/notify',
+			url: '/administrator/ajax/company/notify',
 			data: {
 				company: $this.parent().attr('data-slug')
 			},
@@ -19,7 +19,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/mail/send',
+			url: '/administrator/ajax/mail/send',
 			data: {
 				to: JSON.stringify($('#email-select').val()),
 				subject: $('#subject').val(),
@@ -43,7 +43,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: "/admin/ajax/mail/registered",
+			url: "/administrator/ajax/mail/registered",
 			data: {
 				company: $this.attr('data'),
 				subject: $('#mail-subject').val(),

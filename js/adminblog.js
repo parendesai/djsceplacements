@@ -4,7 +4,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: "/admin/ajax/blog/approve",
+			url: "/administrator/ajax/experiences/approve",
 			data: {
 				id: $this.attr('data-id')
 			},
@@ -20,7 +20,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: "/admin/ajax/blog/disapprove",
+			url: "/administrator/ajax/experiences/disapprove",
 			data: {
 				id: $this.attr('data-id')
 			},

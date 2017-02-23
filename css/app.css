@@ -19,3 +19,11 @@
 	}	
 }
 
+.tab-content {
+	border: 1px solid #ddd;
+    border-top: 0px;
+    padding: 15px;
+}
+body,.label,.dropdown-menu>li>a,label,.btn, .badge {
+	font-weight: 300;
+}

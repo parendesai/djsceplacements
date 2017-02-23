@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var state = 0;
 	$sidebar = $('#sidebar');
-	$sidebar.hide();
+	// $sidebar.hide();
 	$('#hamburger').click(function () {
 		$this = $(this).parent();
 		if(state==0){
@@ -35,7 +35,7 @@ $(document).ready(function() {
 		var $label = $this.parent().parent().parent().parent().find('.label');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/company/closeoropen',
+			url: '/administrator/ajax/company/closeoropen',
 			data: {
 				company: $(this).parent().attr('data'),
 				status: stat.toLowerCase(),

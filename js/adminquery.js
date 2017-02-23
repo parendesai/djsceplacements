@@ -17,7 +17,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/query/mark',
+			url: '/administrator/ajax/query/mark',
 			data: {
 				id: $this.parent().attr('data')
 			},
@@ -34,7 +34,7 @@ $(document).ready(function() {
 		$button.button('loading');
 		$.ajax({
 			method: "POST", 
-			url: '/admin/ajax/query/answer',
+			url: '/administrator/ajax/query/answer',
 			data: $this.serialize(),
 			success: function(result) {
 				location.reload();

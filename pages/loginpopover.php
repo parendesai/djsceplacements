@@ -10,5 +10,5 @@
 	    <label for="passwordInput">Password</label>
 	    <input type="password" class="form-control" id="passwordInput" name="password">
 	  </div>
-	  <button type="submit" class="btn btn-primary btn-block" id="loginButton" data-loading-text="Loggin in...">Login</button>
+	  <button type="submit" class="btn btn-primary btn-block" id="loginButton" data-loading-text="Logging in...">Login</button>
 	</form>

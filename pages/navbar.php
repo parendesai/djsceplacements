@@ -12,7 +12,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <?php if($isAdmin && isset($params[0]) && $params[0]=="admin") { ?>
+      <?php if($isAdmin && isset($params[0]) && $params[0]=="administrator") { ?>
         <a class="navbar-brand" id="hamburger"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
       <?php } ?>
       <a class="navbar-brand" href="/">Placements</a>
@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
         <li <?php if(isset($params[0])&&$params[0]=='queries') { ?>class="active"<?php }?>><a href="/queries">Queries</a></li>
-        <li><a href="/blog" target="_blank">Experiences</a></li>
+        <li><a href="/experiences/" target="_blank">Experiences</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -33,7 +33,7 @@
               <li><a href="/edit">Edit Details</a></li>
               <li><a href="/change-password">Change Password</a></li>
               <?php if($isAdmin) { ?>
-                <li><a href="/admin">Admin Dashboard</a></li>
+                <li><a href="/administrator">Admin Dashboard</a></li>
               <?php }?>
               <li role="separator" class="divider"></li>
               <li><a href="/logout">Logout</a></li>
@@ -47,4 +47,5 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="row padded">
+<div class="container">
+  <div class="row">

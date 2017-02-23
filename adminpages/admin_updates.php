@@ -13,7 +13,7 @@
 				  </h4>
 				</div>
 				<div id="collapse<?php echo $i; ?>" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="heading<?php echo $i; ?>">
-      				<div class="panel-body" data-name="<?php echo $comps[$i]['name'];?>" data="<?php echo $comps[$i]['id'];?>" status="<?php echo $comps[$i]['open'];?>" data-slug="<?php echo $comps[$i]['slug'];?>" data-desc='<?php echo html_entity_decode($comps[$i]['descr']);?>' data-det='<?php echo json_encode($a); ?>' data-mincgpa="<?php echo $comps[$i]['mincgpa'];?>" data-minssc="<?php echo $comps[$i]['minssc'];?>" data-minhsc="<?php echo $comps[$i]['minhsc'];?>">
+      				<div class="panel-body" data-name='<?php echo $comps[$i]["name"];?>' data='<?php echo $comps[$i]["id"];?>' status='<?php echo $comps[$i]["open"];?>' data-slug='<?php echo $comps[$i]["slug"];?>' data-desc='<?php echo html_entity_decode($comps[$i]["descr"]);?>' data-det='<?php echo json_encode($a); ?>' data-mincgpa='<?php echo $comps[$i]["mincgpa"];?>' data-minssc='<?php echo $comps[$i]["minssc"];?>' data-minhsc='<?php echo $comps[$i]["minhsc"];?>'>
       					For new information add a new update. Use the edit update feature only to fix typos or formatting errors.
       					<button data-toggle="modal" data-target="#updateModal" class="btn btn-default pull-right"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
       				</div>
@@ -27,8 +27,8 @@
 		    								<p class="list-group-item-text"><?php echo html_entity_decode($updates[$j]['updts']);?></p>
 		    							</div>
 		    							<div class="col-md-2">
-		    								<div class="btn-group pull-right" role="group" aria-label="..." data="<?php echo $updates[$j]['id'];?>" data-name="<?php echo $comps[$i]['name'];?>" data-updts="<?php echo html_entity_decode($updates[$j]['updts']);?>">
-											  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#updateEditModal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+		    								<div class="btn-group pull-right" role="group" aria-label="..." data='<?php echo $updates[$j]["id"];?>' data-name='<?php echo $comps[$i]["name"];?>' data-updts='<?php echo html_entity_decode($updates[$j]["updts"]);?>'>
+											  <button type='button' class="btn btn-default" data-toggle="modal" data-target="#updateEditModal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
 											  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirm"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></button>
 											</div>
 		    							</div>

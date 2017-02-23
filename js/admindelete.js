@@ -5,7 +5,7 @@ $(document).ready(function() {
 		$this.text('Deleting...');
 		$.ajax({
 			method: "POST",
-			url:'/admin/ajax/company/delete',
+			url:'/administrator/ajax/company/delete',
 			data: {
 				company: $this.attr('data-company')
 			},
@@ -20,7 +20,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url:'/admin/ajax/update/delete',
+			url:'/administrator/ajax/update/delete',
 			data: {
 				updateid: $this.attr('data-company')
 			},
@@ -35,7 +35,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url:'/admin/ajax/query/delete',
+			url:'/administrator/ajax/query/delete',
 			data: {
 				id: $this.attr('data-company')
 			},

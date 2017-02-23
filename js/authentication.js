@@ -26,3 +26,7 @@ function year_check(year) {
 function dob_check(year) {
 	return year!=null && year!=undefined && year!="" && /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/.test(year);
 }
+
+function pin_check(pin) {
+	return pin!=null && pin!=undefined && pin!="" && /^\+?[0-9]{6}$/.test(pin);
+}

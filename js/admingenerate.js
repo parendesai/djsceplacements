@@ -17,7 +17,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/company/generate',
+			url: '/administrator/ajax/company/generate',
 			data: {
 				company: $this.attr('data'),
 				mincgpa: $('#mincgpa').val(),

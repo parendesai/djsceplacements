@@ -3,17 +3,17 @@
 <link rel="stylesheet" type="text/css" href="/css/select2.min.css">
 <link rel="stylesheet" type="text/css" href="/css/admin.css">
 <?php include 'pages/navbar.php'; ?>
-<?php 
+<?php
 	if($isUser) {
 		if($isAdmin){
-			include "adminpages/dashboard.php";
+			include "adminpages/admin_dashboard.php";
 		} else {
-			// Not authoried Page
+			include 'errorpages/403.php';
 		}
-		
+
 	} else if(isset($_SESSION['usap'])) {
 		include "pages/edit.php";
-		
+
 	} else {
 		include "pages/login.php";
 	}

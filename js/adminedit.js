@@ -23,7 +23,7 @@ $(document).ready(function() {
 		$this.text('Saving...');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/company/edit',
+			url: '/administrator/ajax/company/edit',
 			data: {
 				id: $this.attr('data'),
 				company: $('#slug').val(),

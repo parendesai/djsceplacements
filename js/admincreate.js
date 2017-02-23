@@ -9,7 +9,7 @@ $(document).ready(function() {
 		$this.attr('disabled', 'true');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/company/create',
+			url: '/administrator/ajax/company/create',
 			data: {
 				name: $('#sapInput').val(),
 				descr: $('#descr').summernote('code'),
@@ -42,7 +42,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/company/notify',
+			url: '/administrator/ajax/company/notify',
 			data: {
 				company: $this.attr('data-slug')
 			},

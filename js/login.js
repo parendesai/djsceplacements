@@ -18,7 +18,7 @@ $(document).on('submit', '#loginForm',function (e) {
 				} else {
 					$('#alertInvalid').removeClass("hide");
 					$("#passwordInput").val('');
-					// $loginButton.button('reset');
+					$loginButton.button('reset');
 					
 				}
 			}

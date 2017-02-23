@@ -1,12 +1,12 @@
 ﻿<?php include 'pages/links.php'; ?>
 <?php include 'pages/navbar.php'; ?>
-<?php 	
+<?php
 	if($params[0]=="logout") {
 		if ($isUser) {
 			session_unset();
 		}
 		header("Location: ".$_SERVER['HTTP_REFERER']);
-	}	
+	}
 	else if ($params[0]=="edit") {
 		if($isUser) {
 			include 'pages/edit.php';
@@ -15,7 +15,7 @@
 		} else {
 			include 'pages/login.php';
 		}
-	}		
+	}
 	else if ($params[0]=="change-password") {
 		if($isUser) {
 			include 'pages/change.php';
@@ -24,7 +24,7 @@
 		} else {
 			include 'pages/login.php';
 		}
-	}		
+	}
 	else if ($params[0]=="login") {
 		if($isUser) {
 			header("Location: /");
@@ -51,9 +51,11 @@
 		} else {
 			include 'pages/login.php';
 		}
-	} else {
+	} else if($params[0]==""){
 		include 'pages/home.php';
-	}			 
+	} else {
+		include 'errorpages/404.php';
+	}
 ?>
 <?php include 'pages/scripts.php'; ?>
 <script type="text/javascript" src="/js/authentication.js"></script>

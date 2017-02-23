@@ -23,7 +23,7 @@
         
       </div>
 <?php 
-	if(!isset($params[1])) header("location: /blog/page/1");
+	if(!isset($params[1])) header("location: /experiences/page/1");
 
 	if($isUser && isset($params[1]) && $params[1]=="add") {
 		include 'blogpages/blogadd.php';

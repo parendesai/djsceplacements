@@ -18,7 +18,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/update/add',
+			url: '/administrator/ajax/update/add',
 			data: {
 				company: $this.attr('data'),
 				descr: $('#updateEditor').summernote('code') 
@@ -36,7 +36,7 @@ $(document).ready(function() {
 		$this.button('loading');
 		$.ajax({
 			method: "POST",
-			url: '/admin/ajax/update/edit',
+			url: '/administrator/ajax/update/edit',
 			data: {
 				id: $this.attr('data'),
 				descr: $('#updateEditEditor').summernote('code') 

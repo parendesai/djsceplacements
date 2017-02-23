@@ -8,7 +8,7 @@
 
 	function convertCGPAtoPercentage($cgpa) {
 		if($cgpa >= 7) $percentage = 7.4*$cgpa;
-		else $percentage = 7.2*$cgpa;
+		else $percentage = 7.1*$cgpa;
 		return $percentage+12;
 	}
 

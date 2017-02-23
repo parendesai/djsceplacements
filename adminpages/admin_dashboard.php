@@ -13,26 +13,26 @@
 ?>
     <div class="container-fluid">
       <div class="row">
-      <div class="backdrop" id="sidebar">
+      <div class="backdrop" id="sidebar" style="display: none;">
         <div class="col-sm-3 col-md-2 sidebar" >
           <ul class="nav nav-sidebar">
-            <li <?php if($admin)echo 'class="active"'; ?>><a href="/admin/">Overview <span class="sr-only">(current)</span></a></li>
-            <li <?php if($create)echo 'class="active"'; ?>><a href="/admin/company/create/">Add New Company</a></li>
-            <li <?php if($view)echo 'class="active"'; ?>><a href="/admin/company/view/">View All Companies</a></li>
+            <li <?php if($admin)echo 'class="active"'; ?>><a href="/administrator/">Overview <span class="sr-only">(current)</span></a></li>
+            <li <?php if($create)echo 'class="active"'; ?>><a href="/administrator/company/create/">Add New Company</a></li>
+            <li <?php if($view)echo 'class="active"'; ?>><a href="/administrator/company/view/">View All Companies</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li <?php if($update)echo 'class="active"'; ?>><a href="/admin/view/updates">View Updates</a></li>
-            <li <?php if($query)echo 'class="active"'; ?>><a href="/admin/view/queries">View Queries <span class="badge pull-right"><?php echo $queryCount;?></a></li>
+            <li <?php if($update)echo 'class="active"'; ?>><a href="/administrator/view/updates">View Updates</a></li>
+            <li <?php if($query)echo 'class="active"'; ?>><a href="/administrator/view/queries">View Queries <span class="badge pull-right"><?php echo $queryCount;?></a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li <?php if($blogs)echo 'class="active"'; ?>><a href="/admin/view/blogs">Blogs <span class="badge pull-right" id="blog-count"><?php echo $blogCount;?></span></a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
+            <li <?php if($blogs)echo 'class="active"'; ?>><a href="/administrator/view/blogs">Blogs <span class="badge pull-right" id="blog-count"><?php echo $blogCount;?></span></a></li>
+<!--            <li><a href="">Another nav item</a></li>-->
+<!--            <li><a href="">More navigation</a></li>-->
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li <?php if($email)echo 'class="active"'; ?>><a href="/admin/send/email/">Send Email</a></li>
-            <li <?php if($stud)echo 'class="active"'; ?>><a href="/admin/view/all/">View All Students</a></li>
+<!--            <li><a href="">Nav item again</a></li>-->
+            <li <?php if($email)echo 'class="active"'; ?>><a href="/administrator/send/email/">Send Email</a></li>
+            <li <?php if($stud)echo 'class="active"'; ?>><a href="/administrator/view/all/">View All Students</a></li>
           </ul>
         </div>
       </div>
@@ -40,23 +40,23 @@
           <h1 class="page-header">Dashboard</h1>
 
           <?php if($admin) {
-            include "adminpages/admin_companies.php";
+            include "admin_companies.php";
           } else if($create) {
-            include "adminpages/admin_createcompany.php";
+            include "admin_createcompany.php";
           } else if ($view) {
-            include "adminpages/admin_compover.php";
+            include "admin_compover.php";
           } else if ($stud) {
-            include 'adminpages/admin_viewall.php';
+            include 'admin_viewall.php';
           } else if ($indiv) {
-            include "adminpages/admin_viewregister.php";
+            include "admin_viewregister.php";
           } else if ($email) {
-            include "adminpages/admin_sendmail.php";
+            include "admin_sendmail.php";
           } else if ($update) {
-            include "adminpages/admin_updates.php";
+            include "admin_updates.php";
           } else if ($query) {
-            include 'adminpages/admin_queries.php';
+            include 'admin_queries.php';
           } else if ($blogs) {
-            include 'adminpages/admin_blog.php';
+            include 'admin_blog.php';
           } else {
             include 'errorpages/404.php';
           }

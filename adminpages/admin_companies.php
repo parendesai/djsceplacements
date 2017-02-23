@@ -1,6 +1,6 @@
 <?php $comps = getAllCompanies(); ?>
 <div class="row padded">
-  <a class="btn btn-default pull-right" style="margin-bottom: 10px;" href="/admin/company/create/" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+  <a class="btn btn-default pull-right" style="margin-bottom: 10px;" href="/administrator/company/create/" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 </div>
 <div class="row padded">
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -33,7 +33,7 @@
           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
           <button type="button" class="btn-cl btn btn-<?php if($comps[$i]['open'] == 'open') echo 'warning'; else echo "info" ?>" data-loading-text="Loading..."><?php if($comps[$i]['open'] == 'open') echo 'Close'; else echo "Open" ?></button>
           <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-          <a href="/admin/view/company/<?php echo $comps[$i]['id']?>" type="button" class="btn btn-default">View Registered</a>
+          <a href="/administrator/view/company/<?php echo $comps[$i]['id']?>" type="button" class="btn btn-default">View Registered</a>
           <button type="button" data-toggle="modal" data-target="#generateModal" class="btn btn-default excel" data-loading-text="Generating...">Generate XLS</button>
           <button type="button" class="btn btn-default email" data-loading-text="Sending...">Send Reminder</button>
           <button type="button" data-toggle="modal" data-target="#mailModal" class="btn btn-default">Send Updates to Registered</button>
