@@ -42,6 +42,6 @@
   		<?php } ?>
 	</div>
 </div>
-<?php include 'modals/addupdatemodal.php';?>
-<?php include 'modals/updateseditmodal.php';?>
-<?php include 'modals/deleteupdatemodal.php'; ?>
+<?php include 'admin_modals/addupdatemodal.php';?>
+<?php include 'admin_modals/updateseditmodal.php';?>
+<?php include 'admin_modals/deleteupdatemodal.php'; ?>

@@ -40,23 +40,25 @@
           <h1 class="page-header">Dashboard</h1>
 
           <?php if($admin) {
-            include "adminpages/companies.php";
+            include "adminpages/admin_companies.php";
           } else if($create) {
-            include "adminpages/createcompany.php";
+            include "adminpages/admin_createcompany.php";
           } else if ($view) {
-            include "adminpages/compover.php";
+            include "adminpages/admin_compover.php";
           } else if ($stud) {
-            include 'adminpages/viewall.php';
+            include 'adminpages/admin_viewall.php';
           } else if ($indiv) {
-            include "adminpages/viewregister.php";
+            include "adminpages/admin_viewregister.php";
           } else if ($email) {
-            include "adminpages/sendmail.php";
+            include "adminpages/admin_sendmail.php";
           } else if ($update) {
-            include "adminpages/updates.php";
+            include "adminpages/admin_updates.php";
           } else if ($query) {
-            include 'adminpages/queries.php';
+            include 'adminpages/admin_queries.php';
           } else if ($blogs) {
-            include 'adminpages/blog.php';
+            include 'adminpages/admin_blog.php';
+          } else {
+            include 'errorpages/404.php';
           }
           ?>
         </div>

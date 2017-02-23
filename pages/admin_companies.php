@@ -52,8 +52,8 @@
 
 
 <!-- Modal -->
-<?php include 'modals/mailmodal.php'; ?>
-<?php include 'modals/xlsmodal.php'; ?>
-<?php include 'modals/deletemodal.php'; ?>
-<?php include 'modals/editmodal.php'; ?>
-<?php include 'modals/addupdatemodal.php'; ?>
+<?php include 'admin_modals/mailmodal.php'; ?>
+<?php include 'admin_modals/xlsmodal.php'; ?>
+<?php include 'admin_modals/deletemodal.php'; ?>
+<?php include 'admin_modals/editmodal.php'; ?>
+<?php include 'admin_modals/addupdatemodal.php'; ?>

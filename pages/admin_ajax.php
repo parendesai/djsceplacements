@@ -2,26 +2,26 @@
 require_once 'Classes/PHPExcel.php';
 if($isAdmin){
 	if($params[2] == "company") {
-		include 'ajaxcompany.php';
+		include 'admin_ajaxcompany.php';
 	}
 	if($params[2] == "mail") {
-		include 'ajaxmail.php';
+		include 'admin_ajaxmail.php';
 	}
 	
 	if($params[2] == "users") {
-		include 'ajaxuser.php';
+		include 'admin_ajaxuser.php';
 	}
 
 	if($params[2] == "update") {
-		include 'ajaxupdates.php';
+		include 'admin_ajaxupdates.php';
 	}
 
 	if($params[2] == "query") {
-		include 'ajaxqueries.php';
+		include 'admin_ajaxqueries.php';
 	}
 
 	if($params[2] == "blog") {
-		include 'ajaxblog.php';
+		include 'admin_ajaxblog.php';
 	}
 }
 ?>

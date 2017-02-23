@@ -53,5 +53,5 @@
   		<?php } ?>
 	</div>
 </div>
-<?php include 'modals/answerquerymodal.php';?>
-<?php include 'modals/deletequerymodal.php'; ?>
+<?php include 'admin_modals/answerquerymodal.php';?>
+<?php include 'admin_modals/deletequerymodal.php'; ?>
