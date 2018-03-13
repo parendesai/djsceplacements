@@ -2,3 +2,4 @@ helper/.env-*
 reports/*
 .DS_Store
 .idea/
+.code/
